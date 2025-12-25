@@ -1,0 +1,66 @@
+
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Geometric Self--World Disentanglement in Multi-Agent Reinforcement Learning via Spectral Regularization}
+\author{Anonymous}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We present a geometric reinforcement learning architecture that explicitly disentangles agent-centric and task-centric representations through binocular visual attention, contrastive latent pathways, and spectral regularization. Unlike conventional deep reinforcement learning agents that rely on implicit spatial encodings, the proposed system enforces explicit coordinate grounding, agent-referenced signal separation, and representational rank monitoring. The architecture is evaluated in a multi-agent grid-world navigation task, where agents learn goal-directed behavior while maintaining stable internal representations. Spectral entropy monitoring, geometric supervision, and collective latent biasing yield agents that are more interpretable and diagnostically tractable than standard end-to-end baselines. No claims are made regarding consciousness or human-like cognition; all terminology referring to ``self'' denotes agent-centric internal signals used exclusively for control.
+\end{abstract}
+
+\section{Introduction}
+Deep reinforcement learning (RL) has achieved strong empirical performance across control and navigation tasks \cite{mnih2015human}, yet most architectures treat perception, internal state, and action selection as entangled processes. Spatial reasoning is typically implicit, ego-referenced signals are not explicitly modeled, and representational collapse is rarely monitored. These limitations reduce interpretability and complicate stability analysis.
+
+This work proposes a reinforcement learning architecture that explicitly separates agent-centric and task-centric signals, enforces geometric grounding, and applies spectral diagnostics to latent representations. The objective is not to model cognition, but to improve control-relevant structure and inspectability.
+
+\section{Formal Definitions and Terminology}
+\textbf{Agent-centric signal}: A spatial or latent signal expressed relative to the agent's own reference frame.
+
+\textbf{Task-centric signal}: A spatial or latent signal expressed relative to external task entities such as goals.
+
+\textbf{Self-consistency}: Agreement between multiple latent projections derived from identical sensory input.
+
+\textbf{Geometric grounding}: Explicit computation of spatial quantities from perceptual distributions.
+
+\textbf{Spectral entropy}: The Shannon entropy of normalized singular values of a weight matrix, used to monitor representational rank health \cite{raghu2017expressive}.
+
+All definitions are strictly operational and do not imply subjective awareness or phenomenology.
+
+\section{Architecture}
+Figure~\ref{fig:arch} provides an overview of the proposed architecture. A grid-based observation is processed through a shared convolutional encoder producing two saliency maps corresponding to agent-centric and task-centric attention. Softmax normalization yields spatial distributions from which centroids are computed following the soft-argmax formulation \cite{jaderberg2015spatial}. Relative vectors are normalized and concatenated with a compressed latent representation for policy selection.
+
+Internal and external latent pathways are trained using contrastive consistency losses inspired by recent representation learning methods \cite{grill2020bootstrap}, with an auxiliary predictor enforcing structural stability.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.9\linewidth]{architecture.pdf}
+\caption{High-level architecture illustrating explicit separation of agent-centric and task-centric attention, geometric grounding via centroid computation, and spectral monitoring of internal representations.}
+\label{fig:arch}
+\end{figure}
+
+\section{Spectral Regularization}
+To prevent representational rank collapse, the internal projection matrix is regularized toward orthogonality. Singular values are monitored throughout training and converted into spectral entropy, providing a diagnostic signal complementary to reward-based evaluation \cite{pennington2017resurrecting}.
+
+\section{Multi-Agent Latent Coupling}
+In the multi-agent setting, successful agents contribute to a shared latent bias via exponential moving average, conceptually related to population-based methods \cite{jaderberg2017population}. This bias influences action selection without gradient sharing, preserving training stability.
+
+\section{Discussion}
+Explicit geometric grounding and agent-centric signal separation improve interpretability and facilitate diagnostic analysis. Spectral monitoring exposes failure modes not visible through reward curves alone.
+
+\section{Conclusion}
+We present a geometrically grounded reinforcement learning architecture emphasizing explicit self--world signal separation and representational diagnostics. The approach yields interpretable and stable agents without introducing non-standard learning mechanisms.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
