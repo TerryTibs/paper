@@ -1,4 +1,4 @@
 This paper presents a geometrically grounded reinforcement learning architecture emphasizing explicit agent-centric and task-centric signal separation, diagnostic spectral monitoring, and interpretability. The work is intended as a technical systems contribution rather than a claim of cognitive modelling. All terminology is operationally defined, and no claims regarding consciousness or human-like awareness are made.
 
-The python scripts are just a demo
-rs3_geometric_agent
+The python scripts are just a demo.
+Name for agent rs3_geometric_agent
