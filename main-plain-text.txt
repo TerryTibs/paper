@@ -1,5 +1,5 @@
 Geometric Self–World Disentanglement in Multi-Agent Reinforcement Learning via Spectral Regularization
-Author: Anonymous
+Author: Terry Tibs/Vox Lucida 
 ABSTRACT
 We present a geometric reinforcement learning architecture that explicitly disentangles agent-centric and task-centric representations through binocular visual attention, contrastive latent pathways, and spectral regularization. Unlike conventional deep reinforcement learning agents that rely on implicit spatial encodings, the proposed system enforces explicit coordinate grounding, agent-referenced signal separation, and representational rank monitoring.
 The architecture is evaluated in a multi-agent grid-world navigation task, where agents learn goal-directed behavior while maintaining stable internal representations. Spectral entropy monitoring, geometric supervision, and collective latent biasing yield agents that are more interpretable and diagnostically tractable than standard end-to-end baselines.
