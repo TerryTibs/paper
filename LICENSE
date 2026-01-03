@@ -1,6 +1,6 @@
-MIT License
+Vox Lucida License
 
-Copyright (c) 2025 Vox Lucida
+Copyright (c) 2026 Vox Lucida
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -11,6 +11,10 @@ furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
+
+Any and all works based on or derived from the works of Vox Lucida must contain 
+attribution to the original creator Vox Lucida and must contain a link to the 
+original creator's repository: https://github.com/TerryTibs
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
